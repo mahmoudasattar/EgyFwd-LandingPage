@@ -23,11 +23,9 @@ const hdrs = document.querySelectorAll('h2');
 /**
  * End Global Variables
 */
-
 /**
  * Build the Nav
 */
-
 // Create list items that has the same name as the section headers:
 hdrs.forEach(function(hdr){
 	const mainNavListItem = document.createElement('li');
@@ -35,22 +33,18 @@ hdrs.forEach(function(hdr){
 	mainNavListItem.textContent = hdrtxt;
 	navFragment.appendChild(mainNavListItem);
 	mainNavListItem.classList.add("mainNavItem");
-
 	// Create Event that scroll to the Section through calling the parent of the header,
 	mainNavListItem.addEventListener('click',function(){
 		hdr.parentElement.scrollIntoView({behavior: 'smooth'})
 	})
 })
 mainNavList.appendChild(navFragment);
-
 /**
  * End Build the Nav
 */
-
 /**
  * Main Functions and Events
 */
-
 // Add class 'active' to section when near top of viewport:
 window.addEventListener('scroll',function(){
 	secs.forEach(function(sec){
@@ -69,15 +63,12 @@ window.addEventListener('scroll',function(){
 		item.classList.remove('activeLi');
 	})
 });
-
 // Creatt "Scroll to Top" Button Element
 const tB = document.createElement('button');
 tB.innerText = "Scroll To Top";
 document.body.appendChild(tB);
-
 // Scroll to top when clicked
 tB.addEventListener('click',function(){scrollTo({top:0, behavior:'smooth'})});
-
 // Change button class to active after scrolling 200px from top
 window.addEventListener('scroll',function(){if(document.body.getBoundingClientRect().top<-200){
 	tB.classList.add('activeButton')
@@ -85,7 +76,6 @@ window.addEventListener('scroll',function(){if(document.body.getBoundingClientRe
 	else{tB.classList.remove('activeButton')
 	}
 });
-
 //Make Sections Collapsible
 secs.forEach(function(sec){
 	const Ps = sec.querySelectorAll('div>p');
@@ -97,10 +87,6 @@ secs.forEach(function(sec){
 	})
 
 })
-
 /**
  * End of Main Functions and Events
 */
-
-
-
